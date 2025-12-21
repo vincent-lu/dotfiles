@@ -47,3 +47,13 @@ cask "tableplus"
 cask "typora"
 cask "visual-studio-code"
 cask "vlc"
+cask "daisydisk"
+cask "nordvpn"
+
+# App Store Apps
+mas "Peek", id: 1554235898
+mas "Strongbox", id: 1481853033
+mas "DevUtils", id: 1533756032
+mas "Magnet", id: 441258766
+mas "Shadowrocket", id: 932747118
+mas "Things 3", id: 904280696
