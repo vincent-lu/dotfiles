@@ -27,6 +27,13 @@ brew "yt-dlp"
 
 # GUI Applications (Casks)
 cask "dropbox"
+cask "discord"
+cask "firefox"
+cask "phpstorm"
+cask "postman"
+cask "tinkerwell"
+cask "tower"
+cask "transmit"
 cask "fantastical"
 cask "google-chrome"
 cask "iina"
@@ -57,3 +64,5 @@ mas "DevUtils", id: 1533756032
 mas "Magnet", id: 441258766
 mas "Shadowrocket", id: 932747118
 mas "Things 3", id: 904280696
+mas "Rename It", id: 443773246
+mas "GetIpsum", id: 1492652436
