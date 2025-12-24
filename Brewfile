@@ -19,6 +19,7 @@ brew "sqlite"
 brew "wget"
 brew "wp-cli"
 brew "yt-dlp"
+brew "coreutils"
 
 # GUI Applications (Casks)
 cask "dropbox"
