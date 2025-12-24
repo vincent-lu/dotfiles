@@ -52,6 +52,7 @@ cask "vlc"
 cask "daisydisk"
 cask "nordvpn"
 cask "herd"
+cask "orbstack"
 
 # App Store Apps
 mas "Peek", id: 1554235898
