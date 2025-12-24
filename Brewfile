@@ -1,8 +1,3 @@
-# Taps
-tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/services"
-
 # Binaries (Brew Formulae)
 brew "aws-sam-cli"
 brew "awscli"
@@ -56,6 +51,7 @@ cask "visual-studio-code"
 cask "vlc"
 cask "daisydisk"
 cask "nordvpn"
+cask "herd"
 
 # App Store Apps
 mas "Peek", id: 1554235898
@@ -65,4 +61,3 @@ mas "Magnet", id: 441258766
 mas "Shadowrocket", id: 932747118
 mas "Things 3", id: 904280696
 mas "Rename It", id: 443773246
-mas "GetIpsum", id: 1492652436
