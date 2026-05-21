@@ -14,4 +14,10 @@ Personal macOS development environment managed via Homebrew. Brewfile declares f
 ## Rules
 
 1. **Public repo** — never commit secrets, tokens, or personal paths. Memory is gitignored for this reason.
-2. **Brewfile sections** — maintain the existing grouping: formulae, casks, App Store apps. Add new entries to the correct section.
+2. **Brewfile sections** — maintain the existing grouping: formulae, casks, App Store apps. Add new entries to the correct section, sorted alphabetically within each section.
+
+## Skills
+
+| Skill | Purpose |
+|---|---|
+| `/brewfile-audit` | Reconcile Brewfile against installed software — find gaps, research installability, update interactively |
