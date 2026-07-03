@@ -1,6 +1,6 @@
 # Dotfiles
 
-Personal macOS development environment managed via Homebrew. Brewfile declares formulae, casks, and App Store apps.
+Personal macOS development environment. Brewfile declares formulae, casks, and App Store apps; `git/` and `zsh/` hold dotfiles deployed as symlinks into `~/` by `install.sh`.
 
 ## Commands
 
@@ -10,6 +10,15 @@ Personal macOS development environment managed via Homebrew. Brewfile declares f
 | Update Brewfile from system | `brew bundle dump --force` |
 | Check what's missing | `brew bundle check --verbose` |
 | Clean unlisted packages | `brew bundle cleanup` |
+| Deploy dotfile symlinks | `./install.sh` (`--force` to back up real files in the way) |
+
+## Layout
+
+| Path | Deploys to | Notes |
+|---|---|---|
+| `git/gitconfig` | `~/.gitconfig` | Identity, colors, lfs |
+| `git/gitignore` | `~/.gitignore` | Global excludesfile |
+| `zsh/zshrc` | `~/.zshrc` | Sources `~/.zshrc.local` (untracked) last — secrets and machine-specific config go there, never in this repo |
 
 ## Rules
 

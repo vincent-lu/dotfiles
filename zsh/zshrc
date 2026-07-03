@@ -1,0 +1,70 @@
+# OH-MY-ZSH CORE
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="agnoster"
+DEFAULT_USER=$(whoami)
+plugins=(colored-man-pages git git-auto-fetch vscode wd)
+source $ZSH/oh-my-zsh.sh
+
+# HISTORY SETTINGS
+HIST_STAMPS="yyyy-mm-dd"
+HISTFILE=~/.histfile
+HISTSIZE=100000
+SAVEHIST=100000
+
+# ENVIRONMENT VARIABLES
+export EDITOR=vim
+export SSL_CERTS="$HOME/Library/Application Support/Herd/config/valet/Certificates"
+export AWS_REGION=ap-southeast-2
+export JUPITER_PATH="$HOME/Projects/djcity/jupiter"
+export HOMEBREW_NO_ASK=1
+
+# PATHS (Order: Prepend in order of priority)
+# Homebrew (Apple Silicon)
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+
+# Apps & Composer
+export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
+export PATH="$HOME/.composer/vendor/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="$HOME/Library/pnpm"
+[[ ":$PATH:" != *":$PNPM_HOME:"* ]] && export PATH="$PNPM_HOME:$PATH"
+
+# TOOLS (Mise)
+if command -v mise &> /dev/null; then
+  eval "$(mise activate zsh)"
+fi
+
+# DROPBOX SYNC & SCRIPTS
+if [[ -t 0 ]]; then # Interactive terminals only - non-interactive shells would trigger macOS Dropbox-access prompts without this
+    if [ -d "$HOME/Library/CloudStorage/Dropbox" ]; then
+        export DROPBOX_PATH="$HOME/Library/CloudStorage/Dropbox"
+    else
+        export DROPBOX_PATH="$HOME/Dropbox"
+    fi
+    [[ -f "$DROPBOX_PATH/Vincents/Sync/scripts/aliases.sh" ]] && source "$DROPBOX_PATH/Vincents/Sync/scripts/aliases.sh"
+    [[ -f "$DROPBOX_PATH/Vincents/Sync/scripts/full-update.sh" ]] && source "$DROPBOX_PATH/Vincents/Sync/scripts/full-update.sh"
+fi
+
+# HERD
+export PATH="$HOME/Library/Application Support/Herd/bin/":$PATH
+# Herd injected PHP 7.4 configuration.
+export HERD_PHP_74_INI_SCAN_DIR="$HOME/Library/Application Support/Herd/config/php/74/"
+# Herd injected PHP 8.0 configuration.
+export HERD_PHP_80_INI_SCAN_DIR="$HOME/Library/Application Support/Herd/config/php/80/"
+# Herd injected PHP 8.1 configuration.
+export HERD_PHP_81_INI_SCAN_DIR="$HOME/Library/Application Support/Herd/config/php/81/"
+# Herd injected PHP 8.2 configuration.
+export HERD_PHP_82_INI_SCAN_DIR="$HOME/Library/Application Support/Herd/config/php/82/"
+# Herd injected PHP 8.3 configuration.
+export HERD_PHP_83_INI_SCAN_DIR="$HOME/Library/Application Support/Herd/config/php/83/"
+# Herd injected PHP 8.4 configuration.
+export HERD_PHP_84_INI_SCAN_DIR="$HOME/Library/Application Support/Herd/config/php/84/"
+# Herd injected PHP 8.5 configuration.
+export HERD_PHP_85_INI_SCAN_DIR="$HOME/Library/Application Support/Herd/config/php/85/"
+
+# MACHINE-LOCAL OVERRIDES (untracked — secrets and machine-specific config
+# belong in ~/.zshrc.local, never in this public repo)
+[[ -f "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
