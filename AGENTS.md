@@ -1,2 +1,2 @@
 @CLAUDE.md
-@.claude/memory/MEMORY.md
+@.cadence/knowledge/INDEX.md
