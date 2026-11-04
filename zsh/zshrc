@@ -3,6 +3,7 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="agnoster"
 DEFAULT_USER=$(whoami)
 plugins=(colored-man-pages git git-auto-fetch vscode wd)
+DISABLE_MAGIC_FUNCTIONS=true  # no url-quote-magic/bracketed-paste-magic: pasted URLs stay unescaped
 source $ZSH/oh-my-zsh.sh
 
 # HISTORY SETTINGS
